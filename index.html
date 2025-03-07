@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oushi Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-ui">
+            <div id="timer">Time: <span id="time-left">30</span>s</div>
+            <div id="progress">Progress: <span id="current-progress">0</span>%</div>
+            <div id="level">Level: <span id="current-level">1</span></div>
+        </div>
+        <div id="game-scene">
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <div id="player"></div>
+            <div id="items-container"></div>
+        </div>
+        <div id="controls">
+            <button id="tap-area">Tap to Speed Up!</button>
+        </div>
+    </div>
+    <script src="js/player.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/level.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+        // Initialize and start the game
+        const game = new Game();
+        game.startGame();
+    </script>
+</body>
+</html>

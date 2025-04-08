@@ -155,3 +155,43 @@
         opacity: 0;
     }
 }
+
+.item-button {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Style for temporary cooldown */
+.item-button:disabled:not([data-empty="true"]) {
+    background: #cccccc;
+    color: #666666;
+    cursor: wait;
+    opacity: 0.7;
+    /* Remove strike-through and keep normal size for cooldown */
+    transform: none;
+    border: none;
+}
+
+/* Style for completely depleted items */
+.item-button:disabled[data-empty="true"] {
+    background: #333333;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: line-through;
+    border: 1px dashed #666666;
+    transform: scale(0.95);
+}
+
+/* Add new style for depleted items */
+.item-button[data-empty="true"] {
+    text-decoration: line-through;
+    border: 1px dashed #666666;
+    transform: scale(0.95);
+}

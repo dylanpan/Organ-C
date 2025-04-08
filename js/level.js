@@ -59,15 +59,27 @@ class LevelManager {
         this.levels = {
             1: {
                 backgroundImage: 'assets/images/level1-bg.jpg',
-                items: ['phone', 'medicine']
+                items: [
+                    { name: 'phone', count: 2 },
+                    { name: 'medicine', count: 1 }
+                ]
             },
             2: {
                 backgroundImage: 'assets/images/level2-bg.jpg',
-                items: ['phone', 'medicine', 'diaper']
+                items: [
+                    { name: 'phone', count: 3 },
+                    { name: 'medicine', count: 2 },
+                    { name: 'diaper', count: 1 }
+                ]
             },
             3: {
                 backgroundImage: 'assets/images/level3-bg.jpg',
-                items: ['phone', 'medicine', 'diaper', 'bell']
+                items: [
+                    { name: 'phone', count: 3 },
+                    { name: 'medicine', count: 2 },
+                    { name: 'diaper', count: 2 },
+                    { name: 'bell', count: 1 }
+                ]
             }
         };
     }

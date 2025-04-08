@@ -6,10 +6,15 @@
 </head>
 <body>
     <div id="game-container">
+        <div id="start-screen">
+            <h1 id="game-title">Oushi Game</h1>
+            <button id="start-button">Start Game</button>
+        </div>
         <div id="game-ui">
             <div id="timer">Time: <span id="time-left">30</span>s</div>
             <div id="progress">Progress: <span id="current-progress">0</span>%</div>
             <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="buff-bar"></div>  <!-- Add this line -->
         </div>
         <div id="game-scene">
             <div id="progress-bar">
@@ -27,9 +32,8 @@
     <script src="js/level.js"></script>
     <script src="js/game.js"></script>
     <script>
-        // Initialize and start the game
+        // Initialize game but don't start automatically
         const game = new Game();
-        game.startGame();
     </script>
 </body>
 </html>

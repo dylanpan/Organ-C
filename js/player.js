@@ -5,7 +5,7 @@ class Player {
         this.speed = this.baseSpeed; // Initialize speed
         this.speedBoosts = new Set();
         this.element = document.getElementById('player');
-        this.centerPosition = 375; // Center position (800px/2 - 25px)
+        this.centerPosition = 375; // 水平中心位置 (800px/2 - 25px)
         this.isSpeedingUp = false; // Add flag for tap speed boost
         this.tapBoostAmount = 0.5; // Increased boost amount for more noticeable effect
     }
@@ -18,6 +18,7 @@ class Player {
         // Reset to starting position (left side)
         this.element.style.transition = 'none'; // Disable transition temporarily
         this.element.style.left = '-50px';
+        // 不需要设置 top，因为由 CSS 控制
         document.getElementById('current-progress').textContent = '0';
         // Force a reflow to ensure the transition disable takes effect
         this.element.offsetHeight;

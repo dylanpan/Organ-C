@@ -21,15 +21,16 @@ class Game {
         // Get player position and dimensions
         const player = document.getElementById('player');
         const playerRect = player.getBoundingClientRect();
+        const gameContainer = document.getElementById('game-container').getBoundingClientRect();
         
         // Random position around the player's center
         const offset = 50; // Maximum distance from player
-        const randomX = Math.random() * offset * 2 - offset * 2;
+        const randomX = Math.random() * offset * 2 - offset;
         const randomY = Math.random() * offset * 2 - offset;
         
-        // Calculate center position of the player
-        const centerX = playerRect.left + playerRect.width / 2;
-        const centerY = playerRect.top + playerRect.height / 2;
+        // Calculate center position of the player relative to game container
+        const centerX = playerRect.left - gameContainer.left + playerRect.width / 2;
+        const centerY = playerRect.top - gameContainer.top + playerRect.height / 2;
         
         // Position feedback relative to player center
         feedback.style.left = `${centerX + randomX - 20}px`; // -20px to center the feedback text

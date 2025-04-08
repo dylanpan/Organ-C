@@ -1,10 +1,13 @@
 #game-container {
     position: relative;
     width: 800px;
-    height: 400px;
+    height: 600px; /* Increase height to accommodate all elements */
     border: 1px solid #000;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
+    overflow: hidden; /* Prevent content from spilling out */
+    display: flex;
+    flex-direction: column;
 }
 
 #game-scene {
@@ -13,13 +16,14 @@
     height: 400px;
     background: #f0f0f0;
     border: 1px solid #ccc;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 #player {
     position: absolute;
-    bottom: 20px;
-    left: -50px; /* Start position outside left */
+    top: 50%; /* 改为垂直居中 */
+    transform: translateY(-50%); /* 确保完全居中 */
+    left: -50px;
     width: 50px;
     height: 50px;
     background: blue;
@@ -52,6 +56,7 @@
 #controls {
     text-align: center;
     padding: 10px;
+    margin-top: auto; /* Push to bottom */
 }
 
 #tap-area {
@@ -61,6 +66,10 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.1s;
+    margin-bottom: 10px; /* Add space at bottom */
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
 }
 
 #tap-area:active {

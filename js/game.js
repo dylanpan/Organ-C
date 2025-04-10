@@ -11,6 +11,7 @@ class Game {
         };
         this.items = new ItemManager();
         this.tapFeedbackCounter = 0;
+        this.achievements = new AchievementSystem();
         this.initialize();
     }
 
@@ -66,6 +67,7 @@ class Game {
             if (this.isPlaying) {
                 this.player.startSpeedUp();
                 this.showSpeedFeedback();
+                this.achievements.incrementStat('clicks');
             }
         });
 
@@ -81,6 +83,7 @@ class Game {
             if (this.isPlaying) {
                 this.player.startSpeedUp();
                 this.showSpeedFeedback();
+                this.achievements.incrementStat('clicks');
             }
         });
 
@@ -118,6 +121,9 @@ class Game {
         this.currentLevel = levelNum;
         this.isPlaying = true;
         this.player.reset();
+        
+        // 重置成就系统的统计数据
+        this.achievements.reset();
         
         const levelConfig = this.levelManager.levels[levelNum];
         // Initialize items for this level

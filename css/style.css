@@ -195,3 +195,87 @@
     border: 1px dashed #666666;
     transform: scale(0.95);
 }
+
+/* Achievement styles */
+#achievement-container {
+    position: absolute; /* 相对于game-container定位 */
+    top: 20px;
+    right: 20px;
+    width: 210px; 
+    pointer-events: none;
+    z-index: 100;
+}
+
+.achievement-notification {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10.5px; 
+    margin-bottom: 7px; 
+    border-radius: 5.6px; 
+    opacity: 0;
+    transform: translateX(100%);
+    animation: achievementSlideIn 0.5s ease forwards,
+               achievementStay 2.5s ease 0.5s forwards,
+               achievementSlideOut 0.5s ease 3s forwards;
+}
+
+.achievement-icon {
+    width: 22.4px; 
+    height: 22.4px; 
+    margin-right: 10.5px; 
+    background: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* 调整emoji大小 */
+    font-family: "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", sans-serif; /* 添加emoji字体支持 */
+    line-height: 1; /* 确保emoji垂直居中 */
+    text-align: center; /* 确保emoji水平居中 */
+}
+
+.achievement-title {
+    font-weight: bold;
+    font-size: 11.2px; 
+    margin-bottom: 2.8px; 
+}
+
+.achievement-description {
+    font-size: 9.8px; 
+    opacity: 0.8;
+}
+
+@keyframes achievementSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%); /* 从右侧滑入 */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes achievementStay {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes achievementSlideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%); /* 向右侧滑出 */
+    }
+}

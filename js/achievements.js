@@ -1,25 +1,22 @@
 class AchievementSystem {
     constructor() {
-        this.achievements = {
-            clickMaster: {
-                id: 'clickMaster',
-                title: 'Click Master',
-                description: 'Click 500 times in one level',
-                icon: '🎯',
-                condition: {
-                    type: 'clicks',
-                    target: 5
-                },
-                earned: false
-            },
-            // 可以轻松添加更多成就
-        };
-        
+        this.achievements = {};
         this.stats = {
             clicks: 0
         };
         
         this.container = document.getElementById('achievement-container');
+        this.initializeAchievements();
+    }
+
+    initializeAchievements() {
+        // 从配置文件加载所有成就
+        for (const [key, config] of Object.entries(ACHIEVEMENT_CONFIGS)) {
+            this.achievements[key] = {
+                ...config,
+                earned: false
+            };
+        }
     }
 
     reset() {

@@ -2,8 +2,9 @@ class ItemManager {
     constructor() {
         this.items = {
             'phone': { speedBoost: 0.5, duration: 3000 },
-            'medicine': { speedBoost: 0.3, duration: 5000 },
-            'bell': { speedBoost: 0.4, duration: 4000 }
+            'medicine': { speedBoost: 0.6, duration: 5000 },
+            'diaper': { speedBoost: 0.7, duration: 4000 },
+            'bell': { speedBoost: 0.8, duration: 2000 }
         };
         this.activeBoosts = new Map();
         this.buffBar = document.getElementById('buff-bar');
